@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1230CE1624ABE443006E3C15 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230CE1524ABE443006E3C15 /* HistorySection.swift */; };
+		124DB8FA249C0B7D009DD5E2 /* moving.gif in Resources */ = {isa = PBXBuildFile; fileRef = 124DB8F9249C0B7D009DD5E2 /* moving.gif */; };
+		124DB8FD249C0FDD009DD5E2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DB8FC249C0FDD009DD5E2 /* Request.swift */; };
+		124DB8FF249C42CE009DD5E2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DB8FE249C42CD009DD5E2 /* Auth.swift */; };
+		1252FD5424B693C700B5DCF8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252FD5324B693C700B5DCF8 /* Utils.swift */; };
+		12785E7524A9167100209811 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12785E7424A9167100209811 /* MapViewController.swift */; };
+		128AAA67249ADDC70096C6EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA66249ADDC70096C6EA /* AppDelegate.swift */; };
+		128AAA69249ADDC70096C6EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA68249ADDC70096C6EA /* SceneDelegate.swift */; };
+		128AAA6B249ADDC70096C6EA /* OpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA6A249ADDC70096C6EA /* OpenViewController.swift */; };
+		128AAA70249ADDC70096C6EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128AAA6E249ADDC70096C6EA /* Main.storyboard */; };
+		128AAA72249ADDC90096C6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128AAA71249ADDC90096C6EA /* Assets.xcassets */; };
+		128AAA75249ADDC90096C6EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128AAA73249ADDC90096C6EA /* LaunchScreen.storyboard */; };
+		128AAA7D249AE3E10096C6EA /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA7C249AE3E10096C6EA /* HistoryTableViewController.swift */; };
+		128AAA81249AE4460096C6EA /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA80249AE4460096C6EA /* HistoryTableViewCell.swift */; };
+		128AAA83249AE4D20096C6EA /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA82249AE4D20096C6EA /* HistoryEntry.swift */; };
+		128AAA85249AF2D80096C6EA /* UIImageGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA84249AF2D80096C6EA /* UIImageGIF.swift */; };
+		12AEDEB524A7FA390032E661 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEDEB424A7FA390032E661 /* Constants.swift */; };
+		12AEDEBA24A811980032E661 /* Interstate.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 12AEDEB924A811980032E661 /* Interstate.gpx */; };
+		12BD16E924A970DE00F33BE5 /* Approach Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */; };
+		12C9878524A91BB3009B1E09 /* ImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878424A91BB3009B1E09 /* ImageAnnotation.swift */; };
+		12C9878724A91BDB009B1E09 /* ImageAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878624A91BDB009B1E09 /* ImageAnnotationView.swift */; };
+		12C9878924A9219E009B1E09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878824A9219E009B1E09 /* Location.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1230CE1524ABE443006E3C15 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
+		124DB8F9249C0B7D009DD5E2 /* moving.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moving.gif; sourceTree = "<group>"; };
+		124DB8FC249C0FDD009DD5E2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		124DB8FE249C42CD009DD5E2 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		1252FD5324B693C700B5DCF8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		12785E7424A9167100209811 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		128AAA63249ADDC70096C6EA /* Garage Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garage Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		128AAA66249ADDC70096C6EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		128AAA68249ADDC70096C6EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		128AAA6A249ADDC70096C6EA /* OpenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenViewController.swift; sourceTree = "<group>"; };
+		128AAA6F249ADDC70096C6EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		128AAA71249ADDC90096C6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		128AAA74249ADDC90096C6EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		128AAA76249ADDC90096C6EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		128AAA7C249AE3E10096C6EA /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
+		128AAA80249AE4460096C6EA /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		128AAA82249AE4D20096C6EA /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
+		128AAA84249AF2D80096C6EA /* UIImageGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageGIF.swift; sourceTree = "<group>"; };
+		12AEDEB424A7FA390032E661 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		12AEDEB824A80EDC0032E661 /* Towards Apartment.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Towards Apartment.gpx"; sourceTree = "<group>"; };
+		12AEDEB924A811980032E661 /* Interstate.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Interstate.gpx; sourceTree = "<group>"; };
+		12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Approach Apartment.gpx"; sourceTree = "<group>"; };
+		12C9878424A91BB3009B1E09 /* ImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotation.swift; sourceTree = "<group>"; };
+		12C9878624A91BDB009B1E09 /* ImageAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotationView.swift; sourceTree = "<group>"; };
+		12C9878824A9219E009B1E09 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		12E65C7024AADF510076FE52 /* Garage Door.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Garage Door.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		128AAA60249ADDC70096C6EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		124DB8FB249C0FC1009DD5E2 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				124DB8FC249C0FDD009DD5E2 /* Request.swift */,
+				124DB8FE249C42CD009DD5E2 /* Auth.swift */,
+				12AEDEB424A7FA390032E661 /* Constants.swift */,
+				1252FD5324B693C700B5DCF8 /* Utils.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		12785E7324A9164800209811 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				12785E7424A9167100209811 /* MapViewController.swift */,
+				12C9878424A91BB3009B1E09 /* ImageAnnotation.swift */,
+				12C9878624A91BDB009B1E09 /* ImageAnnotationView.swift */,
+				12C9878824A9219E009B1E09 /* Location.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		128AAA5A249ADDC70096C6EA = {
+			isa = PBXGroup;
+			children = (
+				12AEDEB824A80EDC0032E661 /* Towards Apartment.gpx */,
+				12AEDEB924A811980032E661 /* Interstate.gpx */,
+				12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */,
+				128AAA65249ADDC70096C6EA /* Garage Door */,
+				128AAA64249ADDC70096C6EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		128AAA64249ADDC70096C6EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				128AAA63249ADDC70096C6EA /* Garage Door.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		128AAA65249ADDC70096C6EA /* Garage Door */ = {
+			isa = PBXGroup;
+			children = (
+				12E65C7024AADF510076FE52 /* Garage Door.entitlements */,
+				12785E7324A9164800209811 /* Map */,
+				124DB8FB249C0FC1009DD5E2 /* Web */,
+				128AAA7F249AE41A0096C6EA /* Door */,
+				128AAA7E249AE4040096C6EA /* History */,
+				128AAA66249ADDC70096C6EA /* AppDelegate.swift */,
+				128AAA68249ADDC70096C6EA /* SceneDelegate.swift */,
+				128AAA6E249ADDC70096C6EA /* Main.storyboard */,
+				128AAA71249ADDC90096C6EA /* Assets.xcassets */,
+				128AAA73249ADDC90096C6EA /* LaunchScreen.storyboard */,
+				128AAA76249ADDC90096C6EA /* Info.plist */,
+				128AAA84249AF2D80096C6EA /* UIImageGIF.swift */,
+				124DB8F9249C0B7D009DD5E2 /* moving.gif */,
+			);
+			path = "Garage Door";
+			sourceTree = "<group>";
+		};
+		128AAA7E249AE4040096C6EA /* History */ = {
+			isa = PBXGroup;
+			children = (
+				128AAA7C249AE3E10096C6EA /* HistoryTableViewController.swift */,
+				128AAA80249AE4460096C6EA /* HistoryTableViewCell.swift */,
+				128AAA82249AE4D20096C6EA /* HistoryEntry.swift */,
+				1230CE1524ABE443006E3C15 /* HistorySection.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		128AAA7F249AE41A0096C6EA /* Door */ = {
+			isa = PBXGroup;
+			children = (
+				128AAA6A249ADDC70096C6EA /* OpenViewController.swift */,
+			);
+			path = Door;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		128AAA62249ADDC70096C6EA /* Garage Door */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128AAA79249ADDC90096C6EA /* Build configuration list for PBXNativeTarget "Garage Door" */;
+			buildPhases = (
+				128AAA5F249ADDC70096C6EA /* Sources */,
+				128AAA60249ADDC70096C6EA /* Frameworks */,
+				128AAA61249ADDC70096C6EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Garage Door";
+			productName = "Garage Door";
+			productReference = 128AAA63249ADDC70096C6EA /* Garage Door.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		128AAA5B249ADDC70096C6EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Joey Lemon";
+				TargetAttributes = {
+					128AAA62249ADDC70096C6EA = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = 128AAA5E249ADDC70096C6EA /* Build configuration list for PBXProject "Garage Door" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 128AAA5A249ADDC70096C6EA;
+			productRefGroup = 128AAA64249ADDC70096C6EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				128AAA62249ADDC70096C6EA /* Garage Door */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		128AAA61249ADDC70096C6EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128AAA75249ADDC90096C6EA /* LaunchScreen.storyboard in Resources */,
+				12AEDEBA24A811980032E661 /* Interstate.gpx in Resources */,
+				128AAA72249ADDC90096C6EA /* Assets.xcassets in Resources */,
+				12BD16E924A970DE00F33BE5 /* Approach Apartment.gpx in Resources */,
+				124DB8FA249C0B7D009DD5E2 /* moving.gif in Resources */,
+				128AAA70249ADDC70096C6EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		128AAA5F249ADDC70096C6EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12785E7524A9167100209811 /* MapViewController.swift in Sources */,
+				128AAA6B249ADDC70096C6EA /* OpenViewController.swift in Sources */,
+				12C9878524A91BB3009B1E09 /* ImageAnnotation.swift in Sources */,
+				1230CE1624ABE443006E3C15 /* HistorySection.swift in Sources */,
+				124DB8FD249C0FDD009DD5E2 /* Request.swift in Sources */,
+				128AAA67249ADDC70096C6EA /* AppDelegate.swift in Sources */,
+				128AAA69249ADDC70096C6EA /* SceneDelegate.swift in Sources */,
+				1252FD5424B693C700B5DCF8 /* Utils.swift in Sources */,
+				12C9878924A9219E009B1E09 /* Location.swift in Sources */,
+				128AAA83249AE4D20096C6EA /* HistoryEntry.swift in Sources */,
+				12AEDEB524A7FA390032E661 /* Constants.swift in Sources */,
+				128AAA7D249AE3E10096C6EA /* HistoryTableViewController.swift in Sources */,
+				128AAA81249AE4460096C6EA /* HistoryTableViewCell.swift in Sources */,
+				128AAA85249AF2D80096C6EA /* UIImageGIF.swift in Sources */,
+				12C9878724A91BDB009B1E09 /* ImageAnnotationView.swift in Sources */,
+				124DB8FF249C42CE009DD5E2 /* Auth.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		128AAA6E249ADDC70096C6EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				128AAA6F249ADDC70096C6EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		128AAA73249ADDC90096C6EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				128AAA74249ADDC90096C6EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		128AAA77249ADDC90096C6EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		128AAA78249ADDC90096C6EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		128AAA7A249ADDC90096C6EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Garage Door/Garage Door.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V42DSEQNLR;
+				INFOPLIST_FILE = "Garage Door/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jlemon.garage.Garage-Door";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		128AAA7B249ADDC90096C6EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Garage Door/Garage Door.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V42DSEQNLR;
+				INFOPLIST_FILE = "Garage Door/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jlemon.garage.Garage-Door";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		128AAA5E249ADDC70096C6EA /* Build configuration list for PBXProject "Garage Door" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128AAA77249ADDC90096C6EA /* Debug */,
+				128AAA78249ADDC90096C6EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		128AAA79249ADDC90096C6EA /* Build configuration list for PBXNativeTarget "Garage Door" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				128AAA7A249ADDC90096C6EA /* Debug */,
+				128AAA7B249ADDC90096C6EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 128AAA5B249ADDC70096C6EA /* Project object */;
+}
