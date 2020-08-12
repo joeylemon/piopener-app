@@ -10,6 +10,8 @@ import UIKit
 
 class HistoryTableViewController: UITableViewController {
     
+    var page = 1
+    var loading = false
     var sections = [HistorySection]()
     var refreshController = UIRefreshControl()
     var indicator = UIActivityIndicatorView()
@@ -69,6 +71,14 @@ class HistoryTableViewController: UITableViewController {
         return cell
     }
     
+    override open func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == sections.count-1 && !loading {
+            print("load more data")
+            page += 1
+            self.loadHistory()
+        }
+    }
+    
     private func showActivityIndicator() {
         indicator.startAnimating()
     }
@@ -84,6 +94,7 @@ class HistoryTableViewController: UITableViewController {
     
     private func finishLoading() {
         DispatchQueue.main.async {
+            self.loading = false
             self.tableView.reloadData()
             self.refreshController.endRefreshing()
             self.hideActivityIndicator()
@@ -91,8 +102,9 @@ class HistoryTableViewController: UITableViewController {
     }
     
     public func loadHistory() {
+        self.loading = true
         self.showActivityIndicator()
-        Request.send(url: "https://jlemon.org/garage/history/\(Auth.TOKEN)") { (response, result) -> () in
+        Request.send(url: "https://jlemon.org/garage/history/\(page)/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
             
             // If the API didn't return 200 OK, something went wrong
@@ -103,7 +115,15 @@ class HistoryTableViewController: UITableViewController {
             
             let decoder = JSONDecoder()
             do {
-                self.sections = try decoder.decode([HistorySection].self, from: result!)
+                var result = try decoder.decode([HistorySection].self, from: result!)
+                
+                // Merge section that already exists
+                if let section = self.sections.first(where: { $0.Title == result[0].Title }) {
+                    section.Entries += result[0].Entries
+                    result.removeFirst()
+                }
+                
+                self.sections += result
                 self.finishLoading()
             } catch {
                 print(error.localizedDescription)
