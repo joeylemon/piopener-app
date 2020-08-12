@@ -68,9 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("User entered \(region.identifier) region")
         Utils.moveGarage(onlyOpen: true) { (closed, err) -> () in
-            if err {
+            if err != "" {
                 // Send error message
-                self.notifications.add(Utils.createFailedOpenNotification(), withCompletionHandler: nil)
+                self.notifications.add(Utils.createFailedOpenNotification(err), withCompletionHandler: nil)
                 return
             }
             

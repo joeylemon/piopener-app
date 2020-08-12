@@ -24,14 +24,17 @@ class OpenViewController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: Any) {
         Utils.moveGarage(onlyOpen: false) { (closed, err) -> () in
-            if err {
+            if err != "" {
+                print("Err: " + err)
+                
+                self.finish(closed: true)
+                
                 // Can only change UILabel.text from main thread
-                DispatchQueue.main.async {
-                    self.finish(closed: true)
-                    self.descLabel.text = "Could not move garage"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.descLabel.text = err
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self.finish(closed: true)
                 }
                 return

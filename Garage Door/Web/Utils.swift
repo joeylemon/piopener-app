@@ -19,8 +19,6 @@ class Utils {
      - Returns: A formatted human-readable string
      */
     static func formatDate(_ dateString: String) -> String {
-        let calendar = Calendar.current
-        
         let inFormatter = DateFormatter()
         inFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         inFormatter.timeZone = TimeZone(identifier: "America/New_York")
@@ -32,23 +30,7 @@ class Utils {
             
             // Convert from EST to the current timezone
             formatter.timeZone = TimeZone.current
-            
-            // Today
-            if calendar.isDateInToday(date) {
-                formatter.dateFormat = "'Today at' h:mma"
-                
-            // Yesterday
-            } else if calendar.isDateInYesterday(date) {
-                formatter.dateFormat = "'Yesterday at' h:mma"
-                
-            // Within the last week
-            } else if Date().timeIntervalSince(date) < 60 * 60 * 24 * 7 {
-                formatter.dateFormat = "EEEE 'at' h:mma"
-                
-            // Older than a week
-            } else {
-                formatter.dateFormat = "MMMM d 'at' h:mma"
-            }
+            formatter.dateFormat = "'at' h:mma"
             
             return formatter.string(from: date)
         }
@@ -57,18 +39,19 @@ class Utils {
     }
     
     // (Bool, Bool) -> (closed, isError)
-    static func moveGarage(onlyOpen: Bool, completion: @escaping (Bool, Bool) -> ()) {
+    static func moveGarage(onlyOpen: Bool, completion: @escaping (Bool, String) -> ()) {
         // Send a request to the web server to open the garage
         Request.send(url: "https://jlemon.org/garage/\(onlyOpen ? "open" : "move")/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
+            let body = String(data: result!, encoding: .utf8)
             
             // If the API didn't return 200 OK, something went wrong
             if httpResponse.statusCode != 200 {
-                completion(false, true)
+                completion(false, body ?? "Unknown error")
                 return
             }
             
-            completion(String(data: result!, encoding: .utf8) == "true", false)
+            completion(body == "true", "")
         }
     }
     
@@ -84,10 +67,10 @@ class Utils {
         return request
     }
     
-    static func createFailedOpenNotification() -> UNNotificationRequest {
+    static func createFailedOpenNotification(_ err: String) -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
         content.title = "Failed to open garage"
-        content.body = "Could not automatically open the garage, likely because it is already open"
+        content.body = "Could not automatically open the garage: " + err
         content.sound = .default
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
