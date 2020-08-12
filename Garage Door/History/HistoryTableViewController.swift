@@ -33,7 +33,7 @@ class HistoryTableViewController: UITableViewController {
         indicator.center = self.view.center
         self.view.addSubview(indicator)
         
-        self.loadHistory()
+        self.loadHistory(refresh: false)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,7 +75,7 @@ class HistoryTableViewController: UITableViewController {
         if indexPath.section == sections.count-1 && !loading {
             print("load more data")
             page += 1
-            self.loadHistory()
+            self.loadHistory(refresh: false)
         }
     }
     
@@ -89,7 +89,8 @@ class HistoryTableViewController: UITableViewController {
     }
     
     @objc private func refreshHistory(_ sender: Any) {
-        loadHistory()
+        self.page = 1
+        loadHistory(refresh: true)
     }
     
     private func finishLoading() {
@@ -101,7 +102,7 @@ class HistoryTableViewController: UITableViewController {
         }
     }
     
-    public func loadHistory() {
+    public func loadHistory(refresh: Bool) {
         self.loading = true
         self.showActivityIndicator()
         Request.send(url: "https://jlemon.org/garage/history/\(page)/\(Auth.TOKEN)") { (response, result) -> () in
@@ -115,6 +116,10 @@ class HistoryTableViewController: UITableViewController {
             
             let decoder = JSONDecoder()
             do {
+                if refresh {
+                    self.sections = [HistorySection]()
+                }
+                
                 var result = try decoder.decode([HistorySection].self, from: result!)
                 
                 // Merge section that already exists
