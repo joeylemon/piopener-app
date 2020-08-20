@@ -90,6 +90,7 @@ class HistoryTableViewController: UITableViewController {
     
     @objc private func refreshHistory(_ sender: Any) {
         self.page = 1
+        self.loading = false
         loadHistory(refresh: true)
     }
     
@@ -121,6 +122,15 @@ class HistoryTableViewController: UITableViewController {
                 }
                 
                 var result = try decoder.decode([HistorySection].self, from: result!)
+                
+                // If we've reached the end of history, stop loading permanently
+                if result.count == 0 {
+                    DispatchQueue.main.async {
+                        self.refreshController.endRefreshing()
+                        self.hideActivityIndicator()
+                    }
+                    return
+                }
                 
                 // Merge section that already exists
                 if let section = self.sections.first(where: { $0.Title == result[0].Title }) {

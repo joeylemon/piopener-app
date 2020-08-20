@@ -17,8 +17,8 @@ class OpenViewController: UIViewController {
         super.viewDidLoad()
         
         self.descLabel.text = " "
-        self.getStatus() { (closed) -> () in
-            self.updateStatus(closed: closed)
+        self.getStatus() { (closed, error) -> () in
+            self.updateStatus(closed: closed, error: error)
         }
     }
 
@@ -47,17 +47,19 @@ class OpenViewController: UIViewController {
         }
     }
     
-    private func getStatus(completion: @escaping (Bool) -> ()) {
+    // (Bool, String) -> (Status, Error)
+    private func getStatus(completion: @escaping (Bool, String) -> ()) {
         Request.send(url: "https://jlemon.org/garage/status/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
+            let body = String(data: result!, encoding: .utf8)
             
             // If the API didn't return 200 OK, something went wrong
             if httpResponse.statusCode != 200 {
-                completion(false)
+                completion(false, body!)
                 return
             }
             
-            completion(String(data: result!, encoding: .utf8) == "true")
+            completion(body == "true", "")
             return
         }
     }
@@ -82,7 +84,7 @@ class OpenViewController: UIViewController {
         DispatchQueue.main.async {
             self.button.isUserInteractionEnabled = true
             
-            self.updateStatus(closed: !closed)
+            self.updateStatus(closed: !closed, error: "")
         }
     }
     
@@ -96,8 +98,14 @@ class OpenViewController: UIViewController {
         }
     }
     
-    private func updateStatus(closed: Bool) {
+    private func updateStatus(closed: Bool, error: String) {
         DispatchQueue.main.async {
+            if error != "" {
+                self.setImage(name: "closed")
+                self.descLabel.text = error
+                return
+            }
+            
             if closed {
                 self.setImage(name: "closed")
                 self.descLabel.text = "Press to open garage"
