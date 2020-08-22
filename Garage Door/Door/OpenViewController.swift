@@ -12,6 +12,9 @@ class OpenViewController: UIViewController {
     
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var descLabel: UILabel!
+    
+    // Haptic feedback for opening/closing garage
+    let feedback = UINotificationFeedbackGenerator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +29,20 @@ class OpenViewController: UIViewController {
         Utils.moveGarage(onlyOpen: false) { (closed, err) -> () in
             if err != "" {
                 print("Err: " + err)
+                self.feedback.notificationOccurred(.error)
                 
-                self.finish(closed: true)
-                
-                // Can only change UILabel.text from main thread
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.async {
+                    self.button.isUserInteractionEnabled = false
                     self.descLabel.text = err
                 }
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                    self.finish(closed: true)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                    self.finish(closed: false)
                 }
                 return
             }
             
+            self.feedback.notificationOccurred(.success)
             self.begin(closed: closed)
             DispatchQueue.main.asyncAfter(deadline: .now() + Constants.OPEN_DURATION) {
                 self.finish(closed: closed)
