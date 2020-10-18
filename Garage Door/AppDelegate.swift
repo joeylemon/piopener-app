@@ -29,18 +29,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Monitor the region surrounding the apartment
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            let coordinate = CLLocationCoordinate2DMake(Constants.APARTMENT_LATITUDE, Constants.APARTMENT_LONGITUDE)
-            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude), radius: Constants.REGION_RADIUS, identifier: "Apartment")
+            let region = CLCircularRegion(
+                center: CLLocationCoordinate2D(
+                    latitude: Constants.APARTMENT_LATITUDE,
+                    longitude: Constants.APARTMENT_LONGITUDE),
+                radius: Constants.REGION_RADIUS, identifier: "Apartment")
+            
             region.notifyOnEntry = true
             region.notifyOnExit = true
-
-            locationManager.startMonitoring(for: region)
             
             locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.activityType = .otherNavigation
             locationManager.allowsBackgroundLocationUpdates = true
             //locationManager.startUpdatingLocation()
+
+            locationManager.startMonitoring(for: region)
             locationManager.startMonitoringSignificantLocationChanges()
         }
         
@@ -67,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("User entered \(region.identifier) region")
-        Utils.moveGarage(onlyOpen: true) { (closed, err) -> () in
+        Utils.moveGarage(onlyOpen: true) { (status, err) -> () in
             if err != "" {
                 // Send error message
                 self.notifications.add(Utils.createFailedOpenNotification(err), withCompletionHandler: nil)

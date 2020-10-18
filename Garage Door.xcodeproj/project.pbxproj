@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122AC32F253BA36700E3B1A9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122AC32E253BA36700E3B1A9 /* SettingsViewController.swift */; };
+		122AC333253BA4D000E3B1A9 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122AC332253BA4D000E3B1A9 /* SettingsCell.swift */; };
 		1230CE1624ABE443006E3C15 /* HistorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1230CE1524ABE443006E3C15 /* HistorySection.swift */; };
 		124DB8FA249C0B7D009DD5E2 /* moving.gif in Resources */ = {isa = PBXBuildFile; fileRef = 124DB8F9249C0B7D009DD5E2 /* moving.gif */; };
 		124DB8FD249C0FDD009DD5E2 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DB8FC249C0FDD009DD5E2 /* Request.swift */; };
 		124DB8FF249C42CE009DD5E2 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DB8FE249C42CD009DD5E2 /* Auth.swift */; };
 		1252FD5424B693C700B5DCF8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1252FD5324B693C700B5DCF8 /* Utils.swift */; };
+		125C0B4324F5768F00202CB2 /* New York.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 125C0B4224F5768F00202CB2 /* New York.gpx */; };
 		12785E7524A9167100209811 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12785E7424A9167100209811 /* MapViewController.swift */; };
+		1278FFD325377D4500B4DE92 /* Walk.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1278FFD225377D4500B4DE92 /* Walk.gpx */; };
+		1284F43825323ED8002FFA06 /* Wesley.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1284F43725323ED8002FFA06 /* Wesley.gpx */; };
 		128AAA67249ADDC70096C6EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA66249ADDC70096C6EA /* AppDelegate.swift */; };
 		128AAA69249ADDC70096C6EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA68249ADDC70096C6EA /* SceneDelegate.swift */; };
 		128AAA6B249ADDC70096C6EA /* OpenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA6A249ADDC70096C6EA /* OpenViewController.swift */; };
@@ -23,21 +28,30 @@
 		128AAA81249AE4460096C6EA /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA80249AE4460096C6EA /* HistoryTableViewCell.swift */; };
 		128AAA83249AE4D20096C6EA /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA82249AE4D20096C6EA /* HistoryEntry.swift */; };
 		128AAA85249AF2D80096C6EA /* UIImageGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AAA84249AF2D80096C6EA /* UIImageGIF.swift */; };
+		129F9A7E24F86D2300362FD2 /* Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 129F9A7D24F86D2300362FD2 /* Apartment.gpx */; };
 		12AEDEB524A7FA390032E661 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AEDEB424A7FA390032E661 /* Constants.swift */; };
 		12AEDEBA24A811980032E661 /* Interstate.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 12AEDEB924A811980032E661 /* Interstate.gpx */; };
 		12BD16E924A970DE00F33BE5 /* Approach Apartment.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */; };
 		12C9878524A91BB3009B1E09 /* ImageAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878424A91BB3009B1E09 /* ImageAnnotation.swift */; };
 		12C9878724A91BDB009B1E09 /* ImageAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878624A91BDB009B1E09 /* ImageAnnotationView.swift */; };
 		12C9878924A9219E009B1E09 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C9878824A9219E009B1E09 /* Location.swift */; };
+		12E519CE25044C6B00B88E3C /* Sparta.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 12E519CD25044C6B00B88E3C /* Sparta.gpx */; };
+		12FE615C253BA715006CE542 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE615B253BA715006CE542 /* SettingsSection.swift */; };
+		12FE615F253BA74E006CE542 /* SettingsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE615E253BA74E006CE542 /* SettingsEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		122AC32E253BA36700E3B1A9 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		122AC332253BA4D000E3B1A9 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		1230CE1524ABE443006E3C15 /* HistorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistorySection.swift; sourceTree = "<group>"; };
 		124DB8F9249C0B7D009DD5E2 /* moving.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = moving.gif; sourceTree = "<group>"; };
 		124DB8FC249C0FDD009DD5E2 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		124DB8FE249C42CD009DD5E2 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		1252FD5324B693C700B5DCF8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		125C0B4224F5768F00202CB2 /* New York.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "New York.gpx"; sourceTree = "<group>"; };
 		12785E7424A9167100209811 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		1278FFD225377D4500B4DE92 /* Walk.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Walk.gpx; sourceTree = "<group>"; };
+		1284F43725323ED8002FFA06 /* Wesley.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Wesley.gpx; sourceTree = "<group>"; };
 		128AAA63249ADDC70096C6EA /* Garage Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Garage Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		128AAA66249ADDC70096C6EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		128AAA68249ADDC70096C6EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +64,7 @@
 		128AAA80249AE4460096C6EA /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		128AAA82249AE4D20096C6EA /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
 		128AAA84249AF2D80096C6EA /* UIImageGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageGIF.swift; sourceTree = "<group>"; };
+		129F9A7D24F86D2300362FD2 /* Apartment.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Apartment.gpx; sourceTree = "<group>"; };
 		12AEDEB424A7FA390032E661 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		12AEDEB824A80EDC0032E661 /* Towards Apartment.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Towards Apartment.gpx"; sourceTree = "<group>"; };
 		12AEDEB924A811980032E661 /* Interstate.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Interstate.gpx; sourceTree = "<group>"; };
@@ -57,7 +72,10 @@
 		12C9878424A91BB3009B1E09 /* ImageAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotation.swift; sourceTree = "<group>"; };
 		12C9878624A91BDB009B1E09 /* ImageAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnnotationView.swift; sourceTree = "<group>"; };
 		12C9878824A9219E009B1E09 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		12E519CD25044C6B00B88E3C /* Sparta.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Sparta.gpx; sourceTree = "<group>"; };
 		12E65C7024AADF510076FE52 /* Garage Door.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Garage Door.entitlements"; sourceTree = "<group>"; };
+		12FE615B253BA715006CE542 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		12FE615E253BA74E006CE542 /* SettingsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		122AC32B253B9FDA00E3B1A9 /* GPX Files */ = {
+			isa = PBXGroup;
+			children = (
+				12AEDEB824A80EDC0032E661 /* Towards Apartment.gpx */,
+				1284F43725323ED8002FFA06 /* Wesley.gpx */,
+				1278FFD225377D4500B4DE92 /* Walk.gpx */,
+				12AEDEB924A811980032E661 /* Interstate.gpx */,
+				125C0B4224F5768F00202CB2 /* New York.gpx */,
+				12E519CD25044C6B00B88E3C /* Sparta.gpx */,
+				129F9A7D24F86D2300362FD2 /* Apartment.gpx */,
+				12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */,
+			);
+			path = "GPX Files";
+			sourceTree = "<group>";
+		};
+		122AC32D253BA31600E3B1A9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				122AC32E253BA36700E3B1A9 /* SettingsViewController.swift */,
+				122AC332253BA4D000E3B1A9 /* SettingsCell.swift */,
+				12FE615B253BA715006CE542 /* SettingsSection.swift */,
+				12FE615E253BA74E006CE542 /* SettingsEntry.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		124DB8FB249C0FC1009DD5E2 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +140,7 @@
 		128AAA5A249ADDC70096C6EA = {
 			isa = PBXGroup;
 			children = (
-				12AEDEB824A80EDC0032E661 /* Towards Apartment.gpx */,
-				12AEDEB924A811980032E661 /* Interstate.gpx */,
-				12BD16E824A970DE00F33BE5 /* Approach Apartment.gpx */,
+				122AC32B253B9FDA00E3B1A9 /* GPX Files */,
 				128AAA65249ADDC70096C6EA /* Garage Door */,
 				128AAA64249ADDC70096C6EA /* Products */,
 			);
@@ -120,6 +162,7 @@
 				124DB8FB249C0FC1009DD5E2 /* Web */,
 				128AAA7F249AE41A0096C6EA /* Door */,
 				128AAA7E249AE4040096C6EA /* History */,
+				122AC32D253BA31600E3B1A9 /* Settings */,
 				128AAA66249ADDC70096C6EA /* AppDelegate.swift */,
 				128AAA68249ADDC70096C6EA /* SceneDelegate.swift */,
 				128AAA6E249ADDC70096C6EA /* Main.storyboard */,
@@ -209,11 +252,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125C0B4324F5768F00202CB2 /* New York.gpx in Resources */,
 				128AAA75249ADDC90096C6EA /* LaunchScreen.storyboard in Resources */,
 				12AEDEBA24A811980032E661 /* Interstate.gpx in Resources */,
 				128AAA72249ADDC90096C6EA /* Assets.xcassets in Resources */,
+				12E519CE25044C6B00B88E3C /* Sparta.gpx in Resources */,
 				12BD16E924A970DE00F33BE5 /* Approach Apartment.gpx in Resources */,
+				1284F43825323ED8002FFA06 /* Wesley.gpx in Resources */,
 				124DB8FA249C0B7D009DD5E2 /* moving.gif in Resources */,
+				1278FFD325377D4500B4DE92 /* Walk.gpx in Resources */,
+				129F9A7E24F86D2300362FD2 /* Apartment.gpx in Resources */,
 				128AAA70249ADDC70096C6EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,10 +281,14 @@
 				128AAA67249ADDC70096C6EA /* AppDelegate.swift in Sources */,
 				128AAA69249ADDC70096C6EA /* SceneDelegate.swift in Sources */,
 				1252FD5424B693C700B5DCF8 /* Utils.swift in Sources */,
+				122AC333253BA4D000E3B1A9 /* SettingsCell.swift in Sources */,
 				12C9878924A9219E009B1E09 /* Location.swift in Sources */,
+				12FE615C253BA715006CE542 /* SettingsSection.swift in Sources */,
 				128AAA83249AE4D20096C6EA /* HistoryEntry.swift in Sources */,
 				12AEDEB524A7FA390032E661 /* Constants.swift in Sources */,
+				12FE615F253BA74E006CE542 /* SettingsEntry.swift in Sources */,
 				128AAA7D249AE3E10096C6EA /* HistoryTableViewController.swift in Sources */,
+				122AC32F253BA36700E3B1A9 /* SettingsViewController.swift in Sources */,
 				128AAA81249AE4460096C6EA /* HistoryTableViewCell.swift in Sources */,
 				128AAA85249AF2D80096C6EA /* UIImageGIF.swift in Sources */,
 				12C9878724A91BDB009B1E09 /* ImageAnnotationView.swift in Sources */,
@@ -388,7 +440,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V42DSEQNLR;
 				INFOPLIST_FILE = "Garage Door/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V42DSEQNLR;
 				INFOPLIST_FILE = "Garage Door/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

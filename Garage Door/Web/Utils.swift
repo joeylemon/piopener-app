@@ -38,8 +38,8 @@ class Utils {
         return "Invalid date"
     }
     
-    // (Bool, Bool) -> (closed, isError)
-    static func moveGarage(onlyOpen: Bool, completion: @escaping (Bool, String) -> ()) {
+    // (String, String) -> (status, error)
+    static func moveGarage(onlyOpen: Bool, completion: @escaping (String, String) -> ()) {
         // Send a request to the web server to open the garage
         Request.send(url: "https://jlemon.org/garage/\(onlyOpen ? "open" : "move")/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
@@ -47,11 +47,11 @@ class Utils {
             
             // If the API didn't return 200 OK, something went wrong
             if httpResponse.statusCode != 200 {
-                completion(false, body ?? "Unknown error")
+                completion("", body ?? "Unknown error")
                 return
             }
             
-            completion(body == "true", "")
+            completion(body!, "")
         }
     }
     

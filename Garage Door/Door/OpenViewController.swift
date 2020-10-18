@@ -20,13 +20,13 @@ class OpenViewController: UIViewController {
         super.viewDidLoad()
         
         self.descLabel.text = " "
-        self.getStatus() { (closed, error) -> () in
-            self.updateStatus(closed: closed, error: error)
+        self.getStatus() { (status, error) -> () in
+            self.updateStatus(status: status, error: error)
         }
     }
-
+    
     @IBAction func buttonTapped(_ sender: Any) {
-        Utils.moveGarage(onlyOpen: false) { (closed, err) -> () in
+        Utils.moveGarage(onlyOpen: false) { (status, err) -> () in
             if err != "" {
                 print("Err: " + err)
                 self.feedback.notificationOccurred(.error)
@@ -37,42 +37,50 @@ class OpenViewController: UIViewController {
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                    self.finish(closed: false)
+                    self.finish(status: status)
                 }
                 return
             }
             
             self.feedback.notificationOccurred(.success)
-            self.begin(closed: closed)
+            self.begin(status: status)
             DispatchQueue.main.asyncAfter(deadline: .now() + Constants.OPEN_DURATION) {
-                self.finish(closed: closed)
+                self.finish(status: status == "open" ? "closed" : "open")
             }
         }
     }
     
-    // (Bool, String) -> (Status, Error)
-    private func getStatus(completion: @escaping (Bool, String) -> ()) {
+    @IBAction func refreshed(_ sender: Any) {
+        self.setImage(name: "open")
+        self.descLabel.text = " "
+        self.getStatus() { (status, error) -> () in
+            self.updateStatus(status: status, error: error)
+        }
+    }
+    
+    // (String, String) -> (Status, Error)
+    private func getStatus(completion: @escaping (String, String) -> ()) {
         Request.send(url: "https://jlemon.org/garage/status/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
             let body = String(data: result!, encoding: .utf8)
             
             // If the API didn't return 200 OK, something went wrong
             if httpResponse.statusCode != 200 {
-                completion(false, body!)
+                completion("", body!)
                 return
             }
             
-            completion(body == "true", "")
+            completion(body!, "")
             return
         }
     }
     
     // Begin the animation for moving the garage
-    private func begin(closed: Bool) {
+    private func begin(status: String) {
         DispatchQueue.main.async {
             self.button.isUserInteractionEnabled = false
             
-            if closed {
+            if status == "closed" {
                 self.descLabel.text = "Opening garage ..."
             } else {
                 self.descLabel.text = "Closing garage ..."
@@ -83,11 +91,11 @@ class OpenViewController: UIViewController {
     }
     
     // End the animation for moving the garage
-    private func finish(closed: Bool) {
+    private func finish(status: String) {
         DispatchQueue.main.async {
             self.button.isUserInteractionEnabled = true
             
-            self.updateStatus(closed: !closed, error: "")
+            self.updateStatus(status: status, error: "")
         }
     }
     
@@ -101,20 +109,23 @@ class OpenViewController: UIViewController {
         }
     }
     
-    private func updateStatus(closed: Bool, error: String) {
+    private func updateStatus(status: String, error: String) {
         DispatchQueue.main.async {
             if error != "" {
-                self.setImage(name: "closed")
+                self.setImage(name: "error")
                 self.descLabel.text = error
                 return
             }
             
-            if closed {
+            if status == "closed" {
                 self.setImage(name: "closed")
                 self.descLabel.text = "Press to open garage"
-            } else {
+            } else if status == "open" {
                 self.setImage(name: "open")
                 self.descLabel.text = "Press to close garage"
+            } else {
+                self.setImage(name: "between")
+                self.descLabel.text = "Garage is in between"
             }
         }
     }

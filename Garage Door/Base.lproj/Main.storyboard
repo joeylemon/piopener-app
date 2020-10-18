@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +27,7 @@
                                             <constraint firstAttribute="height" constant="200" id="7Vf-rJ-NxY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemRedColor"/>
                                         <state key="normal" backgroundImage="open"/>
                                         <connections>
                                             <action selector="buttonTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9IC-Qe-xuc"/>
@@ -43,20 +45,27 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press to open or close garage" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ryj-DZ-kG4">
                                         <rect key="frame" x="0.0" y="215" width="200" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BuT-93-VdZ" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="bf6-P5-3fS"/>
                             <constraint firstItem="BuT-93-VdZ" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="dST-nk-2sF"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Garage Door" image="house.fill" catalog="system" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="dpM-Di-S17">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="wFO-Tw-0nH">
+                            <connections>
+                                <action selector="refreshed:" destination="9pv-A4-QxB" id="pSC-NP-svu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="button" destination="op2-vE-K4V" id="BtF-XO-NOf"/>
                         <outlet property="descLabel" destination="Ryj-DZ-kG4" id="eNd-oz-tS9"/>
@@ -64,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="-700"/>
+            <point key="canvasLocation" x="967" y="-689"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -76,14 +85,15 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="KZL-tc-sgY" kind="relationship" relationship="viewControllers" id="euf-G3-n0i"/>
-                        <segue destination="ZAX-RM-crN" kind="relationship" relationship="viewControllers" id="eA7-kS-JCq"/>
+                        <segue destination="eKW-sH-G5X" kind="relationship" relationship="viewControllers" id="dPm-vo-NXp"/>
+                        <segue destination="KZL-tc-sgY" kind="relationship" relationship="viewControllers" id="GP9-VE-Sg0"/>
+                        <segue destination="Tyd-8Q-Yuk" kind="relationship" relationship="viewControllers" id="yB2-XF-sjH"/>
+                        <segue destination="ZAX-RM-crN" kind="relationship" relationship="viewControllers" id="gfT-sn-ROB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-1026" y="396"/>
         </scene>
         <!--Garage History-->
         <scene sceneID="KCe-mS-ugP">
@@ -103,7 +113,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="j.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2TA-sx-wgu">
                                             <rect key="frame" x="15" y="8.5" width="56" height="56"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="tintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="tintColor" systemColor="systemTealColor"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opened by Joey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Te-SL-S5g">
                                             <rect key="frame" x="84" y="11" width="274" height="29"/>
@@ -116,7 +126,7 @@
                                             <rect key="frame" x="84" y="37" width="274" height="24"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -138,7 +148,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7N-Hb-WJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="968" y="0.0"/>
+            <point key="canvasLocation" x="229" y="0.0"/>
         </scene>
         <!--Map-->
         <scene sceneID="ciz-L3-8R9">
@@ -155,14 +165,126 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhA-4m-pjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="731"/>
+            <point key="canvasLocation" x="229" y="1649"/>
+        </scene>
+        <!--Door-->
+        <scene sceneID="mPj-Qu-Oj6">
+            <objects>
+                <navigationController id="eKW-sH-G5X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Door" image="house.fill" catalog="system" id="lU8-bH-ufj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XoQ-U2-tm3">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="pNH-qX-Q80"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGw-qw-Q52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="-689"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="PXJ-dI-9Ip">
+            <objects>
+                <tableViewController id="MFl-4F-or8" customClass="SettingsViewController" customModule="Garage_Door" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="3Sa-a3-Twa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="74" id="TQr-eU-E70" customClass="SettingsCell" customModule="Garage_Door" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="74"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TQr-eU-E70" id="yMG-iP-Eqi">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsj-Cb-5st">
+                                            <rect key="frame" x="350" y="6" width="51" height="68"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open garage upon arrival" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-JH-gaj">
+                                            <rect key="frame" x="15" y="10" width="300" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Automatically open the door when you arrive at the apartment" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymJ-Cd-BZc">
+                                            <rect key="frame" x="10" y="28" width="305" height="46"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KAh-JH-gaj" firstAttribute="leading" secondItem="yMG-iP-Eqi" secondAttribute="leading" constant="15" id="GeB-sp-Uak"/>
+                                        <constraint firstAttribute="bottom" secondItem="ymJ-Cd-BZc" secondAttribute="bottom" id="H3q-gL-e67"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qsj-Cb-5st" secondAttribute="bottom" id="Ow7-eP-mFQ"/>
+                                        <constraint firstItem="KAh-JH-gaj" firstAttribute="top" secondItem="yMG-iP-Eqi" secondAttribute="top" constant="10" id="Sm9-M6-Rgf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qsj-Cb-5st" secondAttribute="trailing" constant="15" id="V07-Oi-dC9"/>
+                                        <constraint firstItem="ymJ-Cd-BZc" firstAttribute="top" secondItem="yMG-iP-Eqi" secondAttribute="top" constant="28" id="XRE-p1-1v9"/>
+                                        <constraint firstItem="Qsj-Cb-5st" firstAttribute="top" secondItem="yMG-iP-Eqi" secondAttribute="top" constant="6" id="YSV-P3-N2d"/>
+                                        <constraint firstItem="Qsj-Cb-5st" firstAttribute="leading" secondItem="KAh-JH-gaj" secondAttribute="trailing" constant="35" id="eec-Ta-dDh"/>
+                                        <constraint firstItem="ymJ-Cd-BZc" firstAttribute="leading" secondItem="yMG-iP-Eqi" secondAttribute="leading" constant="10" id="gtR-Cn-uIv"/>
+                                        <constraint firstItem="Qsj-Cb-5st" firstAttribute="leading" secondItem="ymJ-Cd-BZc" secondAttribute="trailing" constant="35" id="hAB-en-QKW"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="settingDescription" destination="ymJ-Cd-BZc" id="EVS-an-YdB"/>
+                                    <outlet property="settingName" destination="KAh-JH-gaj" id="o97-77-WD3"/>
+                                    <outlet property="settingSwitch" destination="Qsj-Cb-5st" id="rdQ-iT-Nf5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MFl-4F-or8" id="Ahm-Py-jOL"/>
+                            <outlet property="delegate" destination="MFl-4F-or8" id="49f-Ub-vr4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="UNA-aX-IGX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EcV-yh-Vkz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079.7101449275362" y="727.90178571428567"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="851-R0-aC5">
+            <objects>
+                <navigationController id="Tyd-8Q-Yuk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape.fill" catalog="system" id="Zqp-kf-MYc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i6K-be-Mjo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MFl-4F-or8" kind="relationship" relationship="rootViewController" id="oqO-Be-z2I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uh3-ux-trL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="229" y="728"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="j.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="open" width="1462" height="1462"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
