@@ -55,6 +55,23 @@ class Utils {
         }
     }
     
+    // (Bool, String) -> (value, error)
+    static func getSetting(setting: String, completion: @escaping (Bool, String) -> ()) {
+        // Send a request to the web server to open the garage
+        Request.send(url: "https://jlemon.org/garage/settings/get/\(Auth.TOKEN)/\(setting)") { (response, result) -> () in
+            let httpResponse = response as! HTTPURLResponse
+            let body = String(data: result!, encoding: .utf8)
+            
+            // If the API didn't return 200 OK, something went wrong
+            if httpResponse.statusCode != 200 {
+                completion(false, body ?? "Unknown error")
+                return
+            }
+            
+            completion(body == "true", "")
+        }
+    }
+    
     static func createOpeningNotification() -> UNNotificationRequest {
         let content = UNMutableNotificationContent()
         content.title = "Opening garage ..."

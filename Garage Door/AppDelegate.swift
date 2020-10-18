@@ -71,14 +71,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("User entered \(region.identifier) region")
-        Utils.moveGarage(onlyOpen: true) { (status, err) -> () in
-            if err != "" {
-                // Send error message
-                self.notifications.add(Utils.createFailedOpenNotification(err), withCompletionHandler: nil)
+        
+        Utils.getSetting(setting: "open_upon_arrival") { (value, err) -> () in
+            // If user doesn't want to open upon arrival, don't send move request
+            if !value || err != "" {
                 return
             }
             
-            self.notifications.add(Utils.createOpeningNotification(), withCompletionHandler: nil)
+            // Otherwise, send move request automatically
+            Utils.moveGarage(onlyOpen: true) { (status, err) -> () in
+                if err != "" {
+                    // Send error message
+                    self.notifications.add(Utils.createFailedOpenNotification(err), withCompletionHandler: nil)
+                    return
+                }
+                
+                self.notifications.add(Utils.createOpeningNotification(), withCompletionHandler: nil)
+            }
         }
     }
     

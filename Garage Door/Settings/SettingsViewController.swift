@@ -17,7 +17,7 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = 74
+        self.tableView.rowHeight = 76
         self.tableView.tableFooterView = nil
         
         // Configure refresh controller (pull down to refresh)
