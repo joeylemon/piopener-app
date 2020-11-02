@@ -22,4 +22,4 @@ The application provides the means to open and close the door manually, as well 
 - Swift: this app was created natively for iOS using Swift and storyboards
 
 <br>
-<img src="https://i.imgur.com/HrO8NFj.png" width="700">
+<img src="https://i.imgur.com/WqypmH1.png" width="700">
