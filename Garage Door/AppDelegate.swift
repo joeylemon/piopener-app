@@ -69,6 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         print("Started monitoring regions: \(manager.monitoredRegions)")
     }
     
+    /**
+     Automatically open the garage when users arrive at the apartment
+     */
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("User entered \(region.identifier) region")
         
@@ -92,12 +95,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
+    /**
+    Record travel history of users to later generate heatmaps for those who opt in
+     */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last {
-            Request.send(url: "https://jlemon.org/rs/\(Auth.TOKEN)/\(location.coordinate.latitude)/\(location.coordinate.longitude)/\(location.horizontalAccuracy)")
+            Utils.getSetting(setting: "record_location_history") { (value, err) -> () in
+                // If user doesn't want to open upon arrival, don't send move request
+                if !value || err != "" {
+                    return
+                }
+                
+                Request.send(url: "https://jlemon.org/rs/\(Auth.TOKEN)/\(location.coordinate.latitude)/\(location.coordinate.longitude)/\(location.horizontalAccuracy)")
+            }
         }
     }
     
+    /**
+     Update user's notification device token when the app opens
+     */
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
