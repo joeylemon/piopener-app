@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         Utils.getSetting(setting: "open_upon_arrival") { (value, err) -> () in
             // If user doesn't want to open upon arrival, don't send move request
             if !value || err != "" {
+                print("Don't open door automatically")
                 return
             }
             
@@ -98,9 +99,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-      let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-      let token = tokenParts.joined()
-      print("Device token: \(token)")
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device token: \(token)")
+        
+        Request.send(url: "https://jlemon.org/garage/updatedevicetoken/\(Auth.TOKEN)/\(token)")
     }
 
 
