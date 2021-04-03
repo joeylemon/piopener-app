@@ -8,8 +8,30 @@
 
 import Foundation
 import UserNotifications
+import CoreLocation
 
 class Utils {
+    
+    /**
+    Register a new region to monitor for entering and exiting
+     */
+    static func monitorRegion(location: CLLocationCoordinate2D, identifier: String, locationManager: CLLocationManager) {
+        let region = CLCircularRegion(
+            center: location,
+            radius: Constants.REGION_RADIUS, identifier: identifier)
+        
+        region.notifyOnEntry = true
+        region.notifyOnExit = true
+        
+        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.activityType = .otherNavigation
+        locationManager.allowsBackgroundLocationUpdates = true
+        //locationManager.startUpdatingLocation()
+
+        locationManager.startMonitoring(for: region)
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
     
     /**
      Format a date string (in the format "yyyy-MM-dd HH:mm:ss") to a human-readable format

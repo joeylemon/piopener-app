@@ -23,7 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         mapView.showsUserLocation = true
         
-        let center = CLLocation(latitude: Constants.APARTMENT_LATITUDE, longitude: Constants.APARTMENT_LONGITUDE)
+        let center = CLLocation(latitude: Constants.APARTMENT_LOCATION.latitude, longitude: Constants.APARTMENT_LOCATION.longitude)
         mapView.centerToLocation(center, regionRadius: 10000)
         self.loadAnnotations()
         

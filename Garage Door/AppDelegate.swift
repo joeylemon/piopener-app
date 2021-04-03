@@ -29,23 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Monitor the region surrounding the apartment
         if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-            let region = CLCircularRegion(
-                center: CLLocationCoordinate2D(
-                    latitude: Constants.APARTMENT_LATITUDE,
-                    longitude: Constants.APARTMENT_LONGITUDE),
-                radius: Constants.REGION_RADIUS, identifier: "Apartment")
+            Utils.monitorRegion(location: Constants.APARTMENT_LOCATION, identifier: "Apartment", locationManager: locationManager)
             
-            region.notifyOnEntry = true
-            region.notifyOnExit = true
-            
-            locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.activityType = .otherNavigation
-            locationManager.allowsBackgroundLocationUpdates = true
-            //locationManager.startUpdatingLocation()
-
-            locationManager.startMonitoring(for: region)
-            locationManager.startMonitoringSignificantLocationChanges()
+            Utils.monitorRegion(location: Constants.HOUSE_LOCATION, identifier: "House", locationManager: locationManager)
         }
         
         return true
@@ -75,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("User entered \(region.identifier) region")
         
+        if region.identifier == "House" {
+            return
+        }
+        
         Utils.getSetting(setting: "open_upon_arrival") { (value, err) -> () in
             // If user doesn't want to open upon arrival, don't send move request
             if !value || err != "" {
@@ -96,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("User entered \(region.identifier) region")
+        print("User exited \(region.identifier) region")
         
         Utils.getSetting(setting: "notify_on_exit_region") { (value, err) -> () in
             // If user doesn't want to notify upon exit, don't send notify request
