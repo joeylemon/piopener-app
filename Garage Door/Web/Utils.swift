@@ -96,4 +96,16 @@ class Utils {
         return request
     }
     
+    static func createExitRegionNotification() -> UNNotificationRequest {
+        let content = UNMutableNotificationContent()
+        content.title = "You have left the apartment"
+        content.body = "Your GPS location no longer shows you at the apartment"
+        content.sound = .defaultCritical
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: "piopener-app-exited-region", content: content, trigger: trigger)
+        
+        return request
+    }
+    
 }

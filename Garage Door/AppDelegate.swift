@@ -95,6 +95,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("User entered \(region.identifier) region")
+        
+        Utils.getSetting(setting: "notify_on_exit_region") { (value, err) -> () in
+            // If user doesn't want to notify upon exit, don't send notify request
+            if !value || err != "" {
+                print("Don't notify on exit region")
+                return
+            }
+            
+            self.notifications.add(Utils.createExitRegionNotification(), withCompletionHandler: nil)
+        }
+    }
+    
     /**
     Record travel history of users to later generate heatmaps for those who opt in
      */

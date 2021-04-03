@@ -18,6 +18,6 @@ class Constants {
     static var APARTMENT_LONGITUDE = -84.087259
     
     // Radius of the area to monitor for arrival at the apartment coordinates (in meters)
-    static var REGION_RADIUS = 50.0
+    static var REGION_RADIUS = 45.0
     
 }
