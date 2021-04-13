@@ -52,9 +52,6 @@ class OpenViewController: UIViewController {
     }
     
     @IBAction func refreshed(_ sender: Any) {
-        Utils.donateOpenGarageIntent()
-        Utils.donateCloseGarageIntent()
-        
         self.setImage(name: "open")
         self.descLabel.text = " "
         self.getStatus() { (status, error) -> () in

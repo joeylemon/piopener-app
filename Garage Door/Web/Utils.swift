@@ -63,6 +63,9 @@ class Utils {
     
     // (String, String) -> (status, error)
     static func moveGarage(mode: String, completion: @escaping (String, String) -> ()) {
+        Utils.donateOpenGarageIntent()
+        Utils.donateCloseGarageIntent()
+        
         // Send a request to the web server to open the garage
         Request.send(url: "https://jlemon.org/garage/\(mode)/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
