@@ -75,6 +75,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             // Otherwise, send move request automatically
             Utils.moveGarage(onlyOpen: true) { (status, err) -> () in
                 if err != "" {
+                    // If the error pertains to recently leaving the apartment, ignore sending the notification
+                    if err.contains("recent") {
+                        return
+                    }
+                    
                     // Send error message
                     self.notifications.add(Utils.createFailedOpenNotification(err), withCompletionHandler: nil)
                     return
@@ -87,6 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("User exited \(region.identifier) region")
+        
+        Request.send(url: "https://jlemon.org/garage/updateregionexittime/\(Auth.TOKEN)")
         
         Utils.getSetting(setting: "notify_on_exit_region") { (value, err) -> () in
             // If user doesn't want to notify upon exit, don't send notify request
