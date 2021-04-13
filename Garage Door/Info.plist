@@ -26,6 +26,11 @@
 	<string>Open the garage automatically when nearing the apartment</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Open the garage automatically when nearing the apartment</string>
+	<key>NSUserActivityTypes</key>
+	<array>
+		<string>CloseGarageIntent</string>
+		<string>OpenGarageIntent</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

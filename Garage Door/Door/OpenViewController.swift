@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 class OpenViewController: UIViewController {
     
@@ -26,7 +27,7 @@ class OpenViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
-        Utils.moveGarage(onlyOpen: false) { (status, err) -> () in
+        Utils.moveGarage(mode: "move") { (status, err) -> () in
             if err != "" {
                 print("Err: " + err)
                 self.feedback.notificationOccurred(.error)
@@ -51,6 +52,9 @@ class OpenViewController: UIViewController {
     }
     
     @IBAction func refreshed(_ sender: Any) {
+        Utils.donateOpenGarageIntent()
+        Utils.donateCloseGarageIntent()
+        
         self.setImage(name: "open")
         self.descLabel.text = " "
         self.getStatus() { (status, error) -> () in

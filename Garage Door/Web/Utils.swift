@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 import CoreLocation
+import Intents
 
 class Utils {
     
@@ -61,9 +62,9 @@ class Utils {
     }
     
     // (String, String) -> (status, error)
-    static func moveGarage(onlyOpen: Bool, completion: @escaping (String, String) -> ()) {
+    static func moveGarage(mode: String, completion: @escaping (String, String) -> ()) {
         // Send a request to the web server to open the garage
-        Request.send(url: "https://jlemon.org/garage/\(onlyOpen ? "open" : "move")/\(Auth.TOKEN)") { (response, result) -> () in
+        Request.send(url: "https://jlemon.org/garage/\(mode)/\(Auth.TOKEN)") { (response, result) -> () in
             let httpResponse = response as! HTTPURLResponse
             let body = String(data: result!, encoding: .utf8)
             
@@ -128,6 +129,40 @@ class Utils {
         let request = UNNotificationRequest(identifier: "piopener-app-exited-region", content: content, trigger: trigger)
         
         return request
+    }
+    
+    static func donateOpenGarageIntent() {
+        let intent = OpenGarageIntent()
+        intent.suggestedInvocationPhrase = "Open the garage door"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("donation failed: \(error)")
+                } else {
+                    print("donation failed")
+                }
+            } else {
+                print("successfully donated open garage interaction")
+            }
+        }
+    }
+    
+    static func donateCloseGarageIntent() {
+        let intent = CloseGarageIntent()
+        intent.suggestedInvocationPhrase = "Close the garage door"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("donation failed: \(error)")
+                } else {
+                    print("donation failed")
+                }
+            } else {
+                print("successfully donated close garage interaction")
+            }
+        }
     }
     
 }

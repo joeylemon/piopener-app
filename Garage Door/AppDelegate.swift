@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }
             
             // Otherwise, send move request automatically
-            Utils.moveGarage(onlyOpen: true) { (status, err) -> () in
+            Utils.moveGarage(mode: "open") { (status, err) -> () in
                 if err != "" {
                     // If the error pertains to recently leaving the apartment, ignore sending the notification
                     if err.contains("recent") {
